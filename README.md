@@ -2,6 +2,7 @@
 
 This project implements a web-based AI inspection workflow for power equipment anomaly detection using image classification, class-specific anomaly detection, RAG-based report generation, and cloud storage.
 The system takes an uploaded equipment image, identifies the equipment class, detects potential anomalies, visualizes the result with heatmaps and overlays, retrieves relevant domain knowledge, and generates an inspection report.
+
 ---
 ## Project Overview
 
@@ -12,6 +13,7 @@ This project aims to support safer and more scalable inspection by combining:
 - Heatmap and overlay visualization
 - Retrieval-Augmented Generation-based inspection report generation
 - S3 and DynamoDB-based result storage
+
 ---
 ## Pipeline
 
@@ -29,6 +31,7 @@ ChromaDB Document Retrieval
 LLM-based Inspection Report Generation
         ↓
 S3 + DynamoDB Storage
+```
 
 ---
 ## Main Features
@@ -52,12 +55,14 @@ The system supports the following power equipment classes:
 glass-insulator
 lightning-rod-suspension
 vari-grip
+```text
 ---
 ## Demo Results
 
 Glass Insulator
 Lightning-Rod Suspension
 Vari-Grip
+
 ---
 ## Repository Structure
 
@@ -81,9 +86,8 @@ insPLAD---streamlit/
 ├── .env.example
 ├── .gitignore
 └── README.md
-
-⸻
-
+```
+---
 ## Required Model Files
 
 Model files are not included in this repository due to file size.
@@ -96,6 +100,7 @@ models/
 ├── anomaly_class0.onnx
 ├── anomaly_class1.onnx
 └── anomaly_class2.onnx
+```
 
 Expected class mapping:
 
@@ -103,6 +108,8 @@ Expected class mapping:
 class 0: glass-insulator
 class 1: lightning-rod-suspension
 class 2: vari-grip
+```
+
 ---
 ## Environment Variables
 
@@ -116,6 +123,7 @@ AWS_REGION=ap-northeast-2
 OPEN_AI_API_KEY=
 ```
 .env must not be uploaded to GitHub.
+
 ---
 ## AWS Setup
 
@@ -125,10 +133,11 @@ This project uses AWS S3 and DynamoDB for result storage.
 
 Create an S3 bucket.
 
-### Example:
+Example:
 ```text
 insplad-anomaly-detection-<account-id>-ap-northeast-2
 ```
+
 The app stores:
 ```text
 images/{inspection_id}/original.png
@@ -136,6 +145,7 @@ images/{inspection_id}/heatmap.png
 images/{inspection_id}/overlay.png
 reports/{inspection_id}.txt
 ```
+
 ### DynamoDB
 
 Create a DynamoDB table:
@@ -144,6 +154,7 @@ Table name: insplad_log
 Partition key: inspection_id
 Type: String
 ```
+
 ---
 ## Installation
 
@@ -152,10 +163,12 @@ Create and activate a virtual environment.
 python3 -m venv .venv
 source .venv/bin/activate
 ```
+
 Install dependencies.
 ```text
 pip install -r requirement.txt
 ```
+
 ---
 ## Build Vector Database
 
@@ -166,6 +179,7 @@ python scripts/build_vectordb.py
 This creates a local chroma_db/ directory.
 
 The vector database is not included in GitHub because it can be regenerated from the source documents.
+
 ---
 ## Run the App
 ```text
@@ -173,17 +187,21 @@ streamlit run app.py
 ```
 Then open the local URL shown in the terminal.
 
+
 Example:
 ```text
 http://localhost:8501
+```
+
 ---
 ## Notes on Embedding Model
 
 The project uses BGE-small for document retrieval.
 ```text
 models/bge-small-ov2/
-
+```
 Depending on the local setup, the model may be downloaded during the first run. After the first download, it will be cached locally.
+
 ---
 ## Notes on Model Threshold
 
@@ -197,6 +215,7 @@ else:
     normal
 ```
 The threshold should be used with the ONNX model exported from the same checkpoint.
+
 ---
 ## Technologies Used
 
@@ -212,6 +231,7 @@ The threshold should be used with the ONNX model exported from the same checkpoi
 * AWS DynamoDB
 * Boto3
 * RAGAS
+
 ---
 ## Security Notice
 
@@ -231,8 +251,9 @@ outputs/
 *.pth
 *.pt
 *zip
-
+```
 Do not upload API keys, AWS credentials, or model files directly to a public repository.
+
 ---
 ## Authors
 
