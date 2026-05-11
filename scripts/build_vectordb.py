@@ -1,9 +1,10 @@
 import os
 import re
 import chromadb
-from sentence_transformers import SentenceTransformer
+from optimum.intel import OVSentenceTransformer
+# from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+model = OVSentenceTransformer.from_pretrained("./models/bge-small-ov2")
 client = chromadb.PersistentClient(path="./chroma_db")
 collection = client.get_or_create_collection("insplad_docs")
 

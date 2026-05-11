@@ -1,10 +1,11 @@
 import chromadb
 import streamlit as st
-from sentence_transformers import SentenceTransformer
+from optimum.intel import OVSentenceTransformer
+# from sentence_transformers import SentenceTransformer
 
 @st.cache_resource
 def model_load():
-    return SentenceTransformer("BAAI/bge-small-en-v1.5") 
+    return OVSentenceTransformer.from_pretrained("./models/bge-small-ov2") 
 
 @st.cache_resource
 def get_collection():

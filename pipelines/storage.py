@@ -7,8 +7,10 @@ load_dotenv()
 
 s3 = boto3.client("s3", region_name="ap-northeast-2")
 dynamodb = boto3.resource("dynamodb", region_name="ap-northeast-2")
-table = dynamodb.Table("insplad_log")
-BUCKET = "insplad-anomaly-detection-747456039784-ap-northeast-2-an"
+table = dynamodb.Table(os.getenv("DYNAMODB_TABLE_NAME", "insplad_log"))
+# dynamodb.Table("insplad_log")
+BUCKET = os.getenv("S3_BUCKET_NAME")
+#"insplad-anomaly-detection-725171146933-ap-northeast-2"
 
 def upload_image(img: Image.Image, key: str):
     buf = io.BytesIO()
