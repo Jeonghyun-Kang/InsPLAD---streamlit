@@ -5,7 +5,9 @@ The system takes an uploaded equipment image, identifies the equipment class, de
 
 ---
 ## Demo
-![Demo GIF](assets/demo.gif)
+![Demo GIF](assets/demo1.gif)
+![Demo GIF](assets/demo2.gif)
+![Demo GIF](assets/demo3.gif)
 
 ---
 ## Project Overview
