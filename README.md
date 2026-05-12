@@ -4,6 +4,10 @@ This project implements a web-based AI inspection workflow for power equipment a
 The system takes an uploaded equipment image, identifies the equipment class, detects potential anomalies, visualizes the result with heatmaps and overlays, retrieves relevant domain knowledge, and generates an inspection report.
 
 ---
+## Demo
+![Demo GIF](assets/demo.gif)
+
+---
 ## Project Overview
 
 Power equipment inspection traditionally relies on manual visual inspection, which can be costly, time-consuming, and risky in high-voltage or high-altitude environments.
