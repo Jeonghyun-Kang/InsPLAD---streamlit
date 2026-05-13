@@ -66,7 +66,6 @@ S3 + DynamoDB Storage
 
 **RAG-based Reporting**
 ![PNG](assets/RAGReporting.png)
-<img width="887" height="834" alt="image" src="https://github.com/user-attachments/assets/435039d4-b02d-44e4-98b6-11c3d4417598" />
 
 RAG bridges visual anomaly detection and actionable inspection reporting.
 The anomaly result is converted into a query, and ChromaDB retrieves class-filtered document chunks relevant to the detected equipment and abnormal status.
