@@ -41,6 +41,8 @@ Contains UAV images with:
 ---
 ## Pipeline
 
+![PNG](assets/System Diagram.png)
+
 ```text
 User Image Upload
         ↓
