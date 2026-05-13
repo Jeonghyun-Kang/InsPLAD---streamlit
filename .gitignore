@@ -10,14 +10,6 @@ __pycache__/
 
 models/
 chroma_db/
-data/
-dataset/
-insplad/
-
-outputs/
-test_heatmap.png
-test_overlay.png
-test_overlay_*.png
 
 *.onnx
 *.ckpt

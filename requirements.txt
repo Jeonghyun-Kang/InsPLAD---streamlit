@@ -16,3 +16,6 @@ python-dotenv
 torch
 torchvision
 torchaudio
+opencv-python-headless 
+openvino
+optimum-intel

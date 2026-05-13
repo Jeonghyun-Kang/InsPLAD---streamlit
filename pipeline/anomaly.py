@@ -46,20 +46,20 @@ def run_anomaly(image: Image.Image, class_id: int):
     return anomaly_score, is_anomaly, heatmap_pil, overlay_pil
 
 
-# if __name__ == "__main__":
-#     from PIL import Image
+if __name__ == "__main__":
+    from PIL import Image
 
-#     img = Image.open("lightning_test.jpg").convert("RGB")
-#     class_id = 1 # 테스트할 클래스 ID
+    img = Image.open("vari_grip_test_04.jpg").convert("RGB")
+    class_id = 1 # 테스트할 클래스 ID
 
 
-#     score, is_anomaly, heatmap, overlay = run_anomaly(img, class_id)
+    score, is_anomaly, heatmap, overlay = run_anomaly(img, class_id)
 
-#     # 결과 출력
-#     print(f"Anomaly Score : {score:.4f}")
-#     print(f"이상 여부     : {'이상' if is_anomaly else '정상'}")
+    # 결과 출력
+    print(f"Anomaly Score : {score:.4f}")
+    print(f"이상 여부     : {'이상' if is_anomaly else '정상'}")
 
-#     # 이미지 저장해서 눈으로 확인
-#     heatmap.save("test_heatmap.png")
-#     overlay.save("test_overlay_lightning.png")
-#     print("test_heatmap.png, test_overlay.png 저장 완료 → 눈으로 확인!")
+    # 이미지 저장해서 눈으로 확인
+    heatmap.save("test_heatmap.png")
+    overlay.save("test_overlay_lightning.png")
+    print("test_heatmap.png, test_overlay.png 저장 완료 → 눈으로 확인!")
