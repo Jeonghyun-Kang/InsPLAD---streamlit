@@ -1,6 +1,6 @@
 streamlit
 onnxruntime
-opencv-python
+# opencv-python
 numpy
 Pillow
 chromadb
@@ -19,3 +19,4 @@ torchaudio
 opencv-python-headless 
 openvino
 optimum-intel
+numpy<2
