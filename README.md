@@ -1,4 +1,4 @@
-# insPLAD Streamlit Anomaly Detection
+# Image-Based Anomaly Detection for Industrial Inspection
 
 This project implements a web-based AI inspection workflow for power equipment anomaly detection using image classification, class-specific anomaly detection, RAG-based report generation, and cloud storage.
 The system takes an uploaded equipment image, identifies the equipment class, detects potential anomalies, visualizes the result with heatmaps and overlays, retrieves relevant domain knowledge, and generates an inspection report.
@@ -19,6 +19,22 @@ This project aims to support safer and more scalable inspection by combining:
 - Heatmap and overlay visualization
 - Retrieval-Augmented Generation-based inspection report generation
 - S3 and DynamoDB-based result storage
+
+---
+## Dataset
+**insPLAD**
+High-Resolution Drone Imagery
+
+Class selection by:
+the role in power grid stability 
+the defection frequency in inspections
+<img width="655" height="125" alt="image" src="https://github.com/user-attachments/assets/bdfdcbb5-9b91-444b-9155-c6d674dbd47b" />
+
+Contains UAV images with: 
+background noise
+viewpoint changes
+fine-grained defects
+<img width="489" height="167" alt="image" src="https://github.com/user-attachments/assets/f2efac84-c72c-4330-9989-42f9a060f619" />
 
 ---
 ## Pipeline
