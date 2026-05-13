@@ -22,18 +22,21 @@ This project aims to support safer and more scalable inspection by combining:
 
 ---
 ## Dataset
+
 **insPLAD**
+
 High-Resolution Drone Imagery
+
 ![PNG](assets/inspladDataset.png)
 
 Class selection by:
-the role in power grid stability 
-the defection frequency in inspections
+* the role in power grid stability 
+* the defection frequency in inspections
 
 Contains UAV images with: 
-background noise
-viewpoint changes
-fine-grained defects
+* background noise
+* viewpoint changes
+* fine-grained defects
 
 ---
 ## Pipeline
