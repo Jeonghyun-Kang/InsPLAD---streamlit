@@ -1,6 +1,38 @@
 import streamlit as st
 from PIL import Image
+import os
+import boto3
+from dotenv import load_dotenv
 
+load_dotenv()
+
+MODEL_FILES = [
+    "classifier.onnx",
+    "anomaly_class0.onnx",
+    "anomaly_class1.onnx",
+    "anomaly_class2.onnx",
+]
+
+@st.cache_resource
+def ensure_models():
+    os.makedirs("models", exist_ok=True)
+
+    bucket = os.getenv("S3_BUCKET_NAME")
+    region = os.getenv("AWS_DEFAULT_REGION", "ap-northeast-2")
+
+    if not bucket:
+        raise RuntimeError("S3_BUCKET_NAME is missing. Set it in Streamlit Secrets.")
+
+    s3 = boto3.client("s3", region_name=region)
+
+    for filename in MODEL_FILES:
+        local_path = f"models/{filename}"
+        s3_key = f"models/{filename}"
+
+        if not os.path.exists(local_path):
+            s3.download_file(bucket, s3_key, local_path)
+
+ensure_models()
 
 st.title("insPLAD 이상탐지 시스템")
 
