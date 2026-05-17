@@ -240,7 +240,6 @@ models/bge-small-ov2/
 ```
 Depending on the local setup, the model may be downloaded during the first run. After the first download, it will be cached locally.
 
----
 ## Notes on Model Threshold
 
 The anomaly detection threshold is managed separately from the ONNX model.
